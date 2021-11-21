@@ -1,4 +1,4 @@
-public class Main {
+public class Dfs2dArray {
     static int ROW = 0;
     static int COL = 0;
 

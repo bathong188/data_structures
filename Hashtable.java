@@ -14,10 +14,10 @@ import java.util.ConcurrentModificationException;
 
 public class Hashtable<K extends Comparable<K>, V extends Comparable<V>> implements DictionaryADT<K, V> {
 	private int curSize;
-	private int maxSize;
-	private int tableSize;
+	private final int maxSize;
+	private final int tableSize;
 	private long modCounter;
-	private LinearList<DictionaryNode<K, V>>[] list;
+	private final LinearList<DictionaryNode<K, V>>[] list;
 
 	@SuppressWarnings("unchecked")
 	public Hashtable(int n) {

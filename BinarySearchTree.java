@@ -19,8 +19,8 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements DictionaryA
 
 	@SuppressWarnings("hiding")
 	private class Node<K, V> {
-		private K key;
-		private V value;
+		private final K key;
+		private final V value;
 		private Node<K, V> leftChild;
 		private Node<K, V> rightChild;
 
@@ -80,11 +80,8 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements DictionaryA
 		if (isEmpty())					// empty tree
 			return false;
 		
-		boolean deleteRoot = false;		// indicates whether deleting root
-		if (((Comparable<K>)key).compareTo(root.key) == 0) {
-			deleteRoot = true;
-		}
-		
+		boolean deleteRoot = ((Comparable<K>) key).compareTo(root.key) == 0;		// indicates whether deleting root
+
 		if (deleteRoot) {	// case 1: delete at root
 			// case 1.1: zero children
 			if (root.leftChild == null && root.rightChild == null) {

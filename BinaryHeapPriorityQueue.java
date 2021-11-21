@@ -13,8 +13,10 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class BinaryHeapPriorityQueue<E extends Comparable<E>> implements PriorityQueue<E>, Iterable<E> {
-	private Wrapper<E>[] storage;
-	private int size, entryNumber, maxCapacity;
+	private final Wrapper<E>[] storage;
+	private int size;
+	private int entryNumber;
+	private final int maxCapacity;
 	private long modificationCounter;
 
 	/**
@@ -23,8 +25,8 @@ public class BinaryHeapPriorityQueue<E extends Comparable<E>> implements Priorit
 	 */
 	@SuppressWarnings("hiding")
 	protected class Wrapper<E> implements Comparable<Wrapper<E>> {
-		private long number;
-		private E data;
+		private final long number;
+		private final E data;
 
 		/**
 		 * Constructor for Wrapper class
@@ -267,8 +269,8 @@ public class BinaryHeapPriorityQueue<E extends Comparable<E>> implements Priorit
 
 	class IteratorHelper implements Iterator<E> {
 		private int iterIndex;
-		private long stateCheck;
-		private Wrapper<E>[] iterArray;
+		private final long stateCheck;
+		private final Wrapper<E>[] iterArray;
 		private Wrapper<E> temp;
 
 		/**
